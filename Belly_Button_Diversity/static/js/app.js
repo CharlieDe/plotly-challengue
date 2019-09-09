@@ -1,4 +1,5 @@
 function buildMetadata(sample) {
+  console.log(route);
 
   // @TODO: Complete the following function that builds the metadata panel
 
