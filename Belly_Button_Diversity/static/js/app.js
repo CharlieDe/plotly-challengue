@@ -5,7 +5,20 @@ function buildMetadata(sample) {
 
   // Use `d3.json` to fetch the metadata for a sample
     // Use d3 to select the panel with id of `#sample-metadata`
-
+    var url = "/metadata/<sample>";
+    d3.json(url).then(function(response){
+      var panel = d3.select("#sample-metadata");
+      panel.html("");
+    })
+  // **************FIRST TRY d3.json(`/metadata/${sample}`.then(function(data){
+  //   var sampMD = d3.select("#sample-metadata");
+  //   sampMD.html("");
+  //   Object.entries(data)
+  //   .forEach(([key, value]) =>{
+  //     sampMD.append("h6").text(`${key}: ${value}`);
+  //   })
+  // }))
+  //*****************FIRST TRY */
     // Use `.html("") to clear any existing metadata
 
     // Use `Object.entries` to add each key and value pair to the panel
